@@ -27,10 +27,10 @@ const Menu: React.FC<MenuProps> = ({ menuData }) => {
   };
 
   return (
-    <header className="bg-background sticky left-0 top-0 z-50 flex w-full items-center justify-center">
+    <header className="sticky left-0 top-0 z-50 flex w-full items-center justify-center bg-background">
       <nav className="w-full max-w-[1440px]">
         <div className="relative z-10 flex h-16 items-center justify-between lg:h-20">
-          <Link href={'/'}>
+          <Link aria-label="Link to start page" href={'/'}>
             <Image
               src={menuData?.image?.image}
               alt={menuData?.image?.alt}
@@ -42,30 +42,32 @@ const Menu: React.FC<MenuProps> = ({ menuData }) => {
           </Link>
           <div className="flex items-center gap-8">
             <Link
-              className="lg:text-20 hidden hover:opacity-80 lg:block"
+              aria-label={`Internal link to: ${menuData.link?.pageReference?.slug?.current}`}
+              className="hidden hover:opacity-80 lg:block lg:text-20"
               href={`/${menuData.link?.pageReference?.slug?.current}`}
             >
               {menuData.link?.title}
             </Link>
             <div className="relative">
               <button
-                className="text-16 lg:text-20 flex h-10 w-20 items-center justify-center rounded-lg border-2 border-black bg-white font-medium text-black active:-translate-x-[2px] active:translate-y-[2px] lg:h-12 lg:w-24"
+                className="flex h-10 w-20 items-center justify-center rounded-lg border-2 border-black bg-white text-16 font-medium text-black active:-translate-x-[2px] active:translate-y-[2px] lg:h-12 lg:w-24 lg:text-20"
                 onClick={handleClick}
               >
                 {menuOpen ? 'Close' : menuData.title}
               </button>
-              <div className="bg-main-green absolute left-0 top-0 -z-[1] h-full w-full -translate-x-1 translate-y-1 rounded-lg" />
+              <div className="absolute left-0 top-0 -z-[1] h-full w-full -translate-x-1 translate-y-1 rounded-lg bg-main-green" />
             </div>
           </div>
         </div>
         {menuOpen && (
           <div className="absolute left-0 top-0 flex h-full w-full justify-center">
-            <div className="bg-background fixed flex h-full w-full max-w-[1440px] flex-col items-center justify-center px-4">
+            <div className="fixed flex h-full w-full max-w-[1440px] flex-col items-center justify-center bg-background px-4">
               <ul className="text-center">
                 {menuData.links.map((link, index) => (
                   <li key={index}>
                     <Link
-                      className="text-36 lg:text-96 text-stroke font-black uppercase leading-tight"
+                      aria-label={`Internal link to: ${link?.pageReference?.slug?.current}`}
+                      className="text-stroke text-36 font-black uppercase leading-tight lg:text-96"
                       href={`/${link?.pageReference?.slug?.current}`}
                     >
                       {link?.title}
@@ -77,10 +79,11 @@ const Menu: React.FC<MenuProps> = ({ menuData }) => {
                 {menuData.socialLinks.map((socialLink, index) => (
                   <li key={index}>
                     <Link
-                      className="text-16 lg:text-20 whitespace-nowrap uppercase underline underline-offset-4"
-                      href={socialLink.url}
+                      aria-label={`${socialLink?.title} page`}
+                      className="whitespace-nowrap text-16 uppercase underline underline-offset-4 lg:text-20"
+                      href={socialLink?.url}
                     >
-                      {socialLink.title}
+                      {socialLink?.title}
                     </Link>
                   </li>
                 ))}

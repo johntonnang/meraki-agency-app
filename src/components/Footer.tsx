@@ -9,7 +9,8 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
           {footerData?.socialLinks.map((socialLink, index) => (
             <li key={index}>
               <Link
-                className="text-16 lg:text-20 whitespace-nowrap uppercase underline underline-offset-4"
+                aria-label={`${socialLink?.title} page`}
+                className="whitespace-nowrap text-16 uppercase underline underline-offset-4 lg:text-20"
                 href={socialLink.url}
               >
                 {socialLink?.title}
@@ -30,7 +31,8 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
             {footerData?.links.map((link, index) => (
               <li key={index}>
                 <Link
-                  className="text-16 lg:text-20 whitespace-nowrap uppercase underline underline-offset-4"
+                  aria-label={`Internal link to: ${link?.pageReference?.slug?.current}`}
+                  className="whitespace-nowrap text-16 uppercase underline underline-offset-4 lg:text-20"
                   href={`/${link?.pageReference?.slug?.current}`}
                 >
                   {link?.title}

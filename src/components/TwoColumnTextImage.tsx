@@ -12,19 +12,24 @@ const TwoColumnTextImage: React.FC<TwoColumnTextImageProps> = ({
 }) => {
   const renderLink = () => {
     let href = '';
+    let ariaLabel = '';
 
     switch (link?.linkType) {
       case 'internal':
         href = `/${link?.pageReference?.slug?.current}`;
+        ariaLabel = `Navigate to ${link?.title}`;
         break;
       case 'external':
         href = link?.url;
+        ariaLabel = `Visit ${link?.title} website`;
         break;
       case 'email':
         href = `mailto:${link?.email}`;
+        ariaLabel = `Send email to ${link?.title}`;
         break;
       case 'phone':
         href = `tel:${link?.phone}`;
+        ariaLabel = `Call ${link?.title}`;
         break;
       default:
         return null;
@@ -32,6 +37,7 @@ const TwoColumnTextImage: React.FC<TwoColumnTextImageProps> = ({
 
     return (
       <Link
+        aria-label={ariaLabel}
         className="ml-1 flex h-12 w-40 items-center justify-center rounded-lg border-2 border-black bg-white text-16 font-medium text-black active:-translate-x-[2px] active:translate-y-[2px] lg:h-16 lg:w-52 lg:text-20"
         href={href}
         target={link?.linkType === 'external' ? '_blank' : undefined}
