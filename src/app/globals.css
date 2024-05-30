@@ -2,32 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  body {
+    @apply font-geist max-w-[1440px] bg-background text-white px-4 lg:px-[72px] mx-auto selection:bg-main-green selection:text-black;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  section {
+    @apply w-full h-full;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.text-stroke:hover {
+  font-style: italic;
+  -webkit-text-stroke: 2px #79FFBD;
+  -webkit-text-fill-color: #111111;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.fade-services {
+  width: 100%;
+  position: absolute;
+  background: radial-gradient(ellipse, transparent 0%, rgba(17,17,17,1) 80%);
+  inset: 0;
+  pointer-events: none;
+}
+
+.fade-offers {
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(17,17,17,1) 10%, transparent 100%);
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ANIMATIONS */
+
+.slider-left, .slider-right {
+  animation-play-state: running;
+}
+
+.slider-left:hover, .slider-right:hover {
+  animation-play-state: paused;
+}
+
+.slider-left {
+  animation: slide-left 30s linear infinite;
+}
+
+.slider-right {
+  animation: slide-right 30s linear infinite;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes verticalSlide {
+  0%, 8.33%, 16.66%, 25%, 33.33%, 41.66%, 50%, 58.33%, 66.66%, 75%, 83.33%, 91.66%, 100% {
+    transform: translateY(0);
+  }
+  8.33%, 16.66% {
+    transform: translateY(-8.33%);
+  }
+  25%, 33.33% {
+    transform: translateY(-16.66%);
+  }
+  41.66%, 50% {
+    transform: translateY(-24.99%);
+  }
+  58.33%, 66.66% {
+    transform: translateY(-33.22%);
+  }
+  75%, 83.33% {
+    transform: translateY(-41.55%);
+  }
+  91.66%, 100% {
+    transform: translateY(-50%);
+  }
+}
+
+.vertical-slider {
+  animation: verticalSlide 10s linear infinite;
+}
+
+.vertical-slider li {
+  color: white;
+  animation: greenColor 10s linear infinite;
+}
+
+.vertical-slider li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.vertical-slider li:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.vertical-slider li:nth-child(3) {
+  animation-delay: 2.4s;
+}
+
+.vertical-slider li:nth-child(4) {
+  animation-delay: 4.1s;
+}
+
+.vertical-slider li:nth-child(5) {
+  animation-delay: 5.8s;
+}
+
+.vertical-slider li:nth-child(6) {
+  animation-delay: 7.5s;
+}
+
+.vertical-slider li:nth-child(7) {
+  animation-delay: 9.2s;
+}
+
+@keyframes greenColor {
+  0% {
+    color: #79FFBD;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: white;
   }
 }
