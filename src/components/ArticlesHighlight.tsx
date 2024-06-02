@@ -27,7 +27,7 @@ const ArticlesHighlight: React.FC<ArticlesHighlightProps> = ({
                 className="flex h-10 w-32 items-center justify-center rounded-lg border-2 border-black bg-white text-12 font-medium text-black active:-translate-x-[2px] active:translate-y-[2px]"
                 href={`/inspiration/${article.slug?.current}`}
               >
-                Read more
+                Read article
               </Link>
               <div className="absolute left-0 top-0 -z-[1] h-10 w-32 -translate-x-1 translate-y-1 rounded-lg bg-main-green" />
             </div>
