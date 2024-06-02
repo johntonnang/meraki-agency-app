@@ -23,7 +23,7 @@ const ArticlesHighlight: React.FC<ArticlesHighlightProps> = ({
             <p className="text-16">{article?.preamble}</p>
             <div className="relative z-10 mt-auto">
               <Link
-                aria-label="Read more"
+                aria-label="Read article"
                 className="flex h-10 w-32 items-center justify-center rounded-lg border-2 border-black bg-white text-12 font-medium text-black active:-translate-x-[2px] active:translate-y-[2px]"
                 href={`/inspiration/${article.slug?.current}`}
               >
