@@ -105,6 +105,16 @@ export async function getPageData(slug: string) {
             hotspot
           }
         },
+        _type == "twoColumnImageList" => {
+          _type,
+          header,
+          servicesList,
+          image {
+            "image": asset->url,
+            alt,
+            hotspot
+          }
+        },
         _type == "articlesHighlight" => {
           _type,
           title,
@@ -220,6 +230,16 @@ export async function getStartPageData() {
           }
         },
         _type == "twoColumnListImage" => {
+          _type,
+          header,
+          servicesList,
+          image {
+            "image": asset->url,
+            alt,
+            hotspot
+          }
+        },
+        _type == "twoColumnImageList" => {
           _type,
           header,
           servicesList,

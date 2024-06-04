@@ -4,6 +4,8 @@ import Hero from '~components/Hero';
 import Services from '~components/Services';
 import TwoColumnTextImage from '~components/TwoColumnTextImage';
 import TwoColumnImageText from '~components/TwoColumnImageText';
+import TwoColumnListImage from '~components/TwoColumnListImage';
+import TwoColumnImageList from '~components/TwoColumnImageList';
 import ArticlesHighlight from '~components/ArticlesHighlight';
 
 import { ComponentProps, ComponentMap, PageData } from '~types/index';
@@ -13,6 +15,8 @@ const componentMap: ComponentMap = {
   services: Services as FC<ComponentProps>,
   twoColumnTextImage: TwoColumnTextImage as FC<ComponentProps>,
   twoColmnImageText: TwoColumnImageText as FC<ComponentProps>,
+  twoColumnListImage: TwoColumnListImage as FC<ComponentProps>,
+  twoColumnImageList: TwoColumnImageList as FC<ComponentProps>,
   articlesHighlight: ArticlesHighlight as FC<ComponentProps>,
 };
 

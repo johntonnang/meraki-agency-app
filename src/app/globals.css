@@ -142,3 +142,7 @@
     color: white;
   }
 }
+
+.list-right {
+  direction: rtl;
+}
