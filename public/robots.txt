@@ -1,0 +1,19 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /user/
+Disallow: /temp/
+Disallow: /private/
+Disallow: /secret/
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.zip$
+
+# Host
+Host: https://www.meraki-agency.vercel.app
+
+# Sitemaps
+Sitemap: https://www.meraki-agency.vercel.app/sitemap.xml
