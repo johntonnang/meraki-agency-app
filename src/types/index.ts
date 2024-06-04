@@ -43,6 +43,16 @@ export interface TwoColumnTextImageProps extends BaseProps {
   };
 }
 
+export interface TwoColumnListImageProps extends BaseProps {
+  _type: 'twoColumnListImage';
+  header: string;
+  servicesList: string[];
+  image: {
+    image: string;
+    alt: string;
+  };
+}
+
 export interface ArticlesHighlightProps extends BaseProps {
   _type: 'articlesHighlight';
   title: string;
@@ -135,6 +145,7 @@ export type ComponentProps =
   | HeroProps
   | ServicesProps
   | TwoColumnTextImageProps
+  | TwoColumnListImageProps
   | ArticlesHighlightProps
   | AllArticlesProps;
 

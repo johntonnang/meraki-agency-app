@@ -4,6 +4,7 @@ import Hero from '~components/Hero';
 import Services from '~components/Services';
 import TwoColumnTextImage from '~components/TwoColumnTextImage';
 import TwoColumnImageText from '~components/TwoColumnImageText';
+import TwoColumnListImage from '~components/TwoColumnListImage';
 import AllArticles from '~components/AllArticles';
 
 import {
@@ -20,6 +21,7 @@ const componentMap: ComponentMap = {
   services: Services as FC<ComponentProps>,
   twoColumnTextImage: TwoColumnTextImage as FC<ComponentProps>,
   twoColumnImageText: TwoColumnImageText as FC<ComponentProps>,
+  twoColumnListImage: TwoColumnListImage as FC<ComponentProps>,
   allArticles: AllArticles as FC<ComponentProps>,
 };
 
