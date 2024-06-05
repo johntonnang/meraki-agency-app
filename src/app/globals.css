@@ -34,6 +34,10 @@
   pointer-events: none;
 }
 
+.list-right {
+  direction: rtl;
+}
+
 /* ANIMATIONS */
 
 .slider-left, .slider-right {
@@ -141,8 +145,4 @@
   100% {
     color: white;
   }
-}
-
-.list-right {
-  direction: rtl;
 }

@@ -7,8 +7,8 @@ const TwoColumnImageList: React.FC<TwoColumnListImageProps> = ({
   image,
 }) => {
   return (
-    <section className="flex h-full w-full flex-col gap-16 py-16 text-right lg:flex-row-reverse lg:gap-0 lg:py-32">
-      <div className="flex h-full w-full flex-col gap-4 lg:gap-6">
+    <section className="flex h-full w-full flex-col gap-16 py-16 text-right lg:flex-row-reverse lg:py-32">
+      <div className="flex h-full w-full flex-col gap-4">
         <h2 className="text-28 font-black uppercase leading-none tracking-tight lg:text-64">
           {header}
         </h2>

@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { PortableText } from '@portabletext/react';
 import { ArticleData } from '~types/index';
+import Image from 'next/image';
 
 const ArticlePage: FC<{ articleData: ArticleData }> = ({ articleData }) => (
   <article>
@@ -10,7 +11,14 @@ const ArticlePage: FC<{ articleData: ArticleData }> = ({ articleData }) => (
       <p>{new Date(articleData.date).toLocaleDateString()}</p>
     )}
     {articleData.image?.image && (
-      <img src={articleData.image.image} alt={articleData.image.alt} />
+      <Image
+        src={articleData.image.image}
+        alt={articleData.image.alt}
+        width="0"
+        height="0"
+        sizes="(max-width: 768px) 100vw, 33vw"
+        className="aspect-video h-auto w-full object-cover"
+      />
     )}
     {articleData.preamble && <p>{articleData.preamble}</p>}
     {articleData.details && <PortableText value={articleData.details} />}

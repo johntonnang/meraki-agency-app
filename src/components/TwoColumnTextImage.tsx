@@ -49,7 +49,7 @@ const TwoColumnTextImage: React.FC<TwoColumnTextImageProps> = ({
   };
 
   return (
-    <section className="flex h-full w-full flex-col gap-16 py-16 lg:flex-row lg:gap-6 lg:py-32">
+    <section className="flex h-full w-full flex-col gap-16 py-16 lg:flex-row lg:py-32">
       <div className="flex h-full w-full flex-col gap-4 lg:gap-6">
         <p className="w-3/4 text-12 lg:w-2/3 lg:text-16">{preamble}</p>
         <h2 className="text-28 font-black uppercase leading-none tracking-tight lg:text-64">
